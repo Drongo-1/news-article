@@ -2,47 +2,48 @@
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}"> {% endblock %}
 <body class="mt-3">
   <div class="main">
-    <div class="container">
-      <div class="row">
-        <div class="col-3">
-          <div class="card-column">
-            <div class="card-header">
-              <h4>News Sources</h4>
-            </div>
-            <div class="list-group list-group-flush scrolly">
-              <ul>
-                {% for source in sources %}
-                <a href="/article/{{source.id}}">
-                  <p class="text-capitalize text-muted">{{source.id}}</p>
-                </a>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-12">
-          <h1 class="text-center">TRENDING NEWS</h3>
-          <div class="container">
-            <div class="card-columns">
-              {% for headlines in headlines %}
-              <div class="card">
-                <img class="card" src="{{headlines.image}}" alt="Card image cap"  style="width: 99%;">
-                <div class="card-body">
-                  <h5 class="card-title">{{headlines.author}}</h5>
-                  <p class="card-text">{{headlines.description}}</p>
-                  <a href="{{headlines.url}}">
-                    <p class="card-text">Show more</p>
-                  </a>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">Publish date:{{headlines.time}}</small>
-                </div>
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <div class="card-column">
+              <div class="card-header">
+                <h4 class="text-dark">News Sources</h4>
               </div>
-              {% endfor %}
+              <div class="list-group list-group-flush scrolly">
+                <ul>
+                  {% for source in sources %}
+                  <a href="/article/{{source.id}}">
+                    <p class="text-capitalize text-muted">{{source.id}}</p>
+                  </a>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <h1 class="text-center">TRENDING NEWS</h3>
+            <div class="container">
+              <div class="card-columns">
+                {% for headlines in headlines %}
+                <div class="card">
+                  <img class="card" src="{{headlines.image}}" alt="Card image cap"  style="width: 99%;">
+                  <div class="card-body">
+                    <h5 class="card-title">{{headlines.author}}</h5>
+                    <p class="card-text">{{headlines.description}}</p>
+                    <a href="{{headlines.url}}">
+                      <p class="card-text">Show more</p>
+                    </a>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Publish date:{{headlines.time}}</small>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
