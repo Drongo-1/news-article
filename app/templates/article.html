@@ -3,18 +3,17 @@
 <br>
 <br>
 <body>
-  <h1 align="center" class="text-capitalize"> {{id}} </h3>
+  <h1 class="text-center" class="text-capitalize"> {{id}} </h3>
   <div class="container">
     <div class="card-columns">
       {% for article in articles %}
-
       <div class="card">
-        <img class="card" src="{{article.image}}" alt="Card image cap" size="100px180">
+        <img class="card" src="{{article.image}}" alt="Card image cap"  style="width: 99%;">
         <div class="card-body">
           <h5 class="card-title">{{article.author}}</h5>
           <p class="card-text">{{article.description}}</p>
           <a href="{{article.url}}">
-            <p class="card-text">Click here for more details!</p>
+            <p class="card-text">Show more</p>
           </a>
         </div>
         <div class="card-footer">
